@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --trust-blue: #0062ff;
+  --trust-blue-glow: rgba(0, 98, 255, 0.15);
+  --mint-green: #00d97e;
+  --mint-green-glow: rgba(0, 217, 126, 0.15);
+  --warning-orange: #f59e0b;
+  --warning-red: #ef4444;
+  --slate-gray: #475569;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-trust-blue: var(--trust-blue);
+  --color-mint-green: var(--mint-green);
+  --color-warning-orange: var(--warning-orange);
+  --color-warning-red: var(--warning-red);
+  --color-slate-gray: var(--slate-gray);
+
+  --font-sans: "Inter", "Outfit", system-ui, sans-serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+}
+
+.premium-gradient-text {
+  background: linear-gradient(135deg, #0062ff 0%, #00d97e 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-gradient {
+  background: radial-gradient(circle at 50% 50%, rgba(0, 98, 255, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 100% 0%, rgba(0, 217, 126, 0.05) 0%, transparent 50%);
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Custom Scrollbar for Premium Feel */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(0, 98, 255, 0.1);
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 98, 255, 0.3);
+}
